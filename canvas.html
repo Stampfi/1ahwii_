@@ -1,0 +1,144 @@
+<!Doctype html>
+<html lang="de">
+
+<head>
+    <title>Auf einem Canvas zeichnen</title>
+    <style>
+        #scene {
+            border: 1px dotted black
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Auf einem Canvas zeichnen</h1>
+    <canvas id="scene" width="500" height="500">
+        Dein Browser unterstützt Canvas nicht.
+    </canvas>
+    <script>
+        // Mit'//' bzw. '/*' und '*/' kann JavaScript Code kommentiert werden
+        // (wie '<!--' bzw. '-->' in HTML)
+        /**@type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d") // 2D-Zeichenkontext des Canvas holen und als 'ctx' definieren
+        
+        // Rechteck füllen: X = 10, Y = 5, Breite = 20, Höhe = 10
+        ctx.fillRect(10, 5, 20, 10)
+        ctx.fillRect(485, 5, 10, 10)
+        ctx.fillRect(485, 190, 10, 120)
+        ctx.fillRect(465, 480, 30, 15)
+        // Füllfarbe ändern (Standart: schwarz)
+        // Beamte Farben: https://www.w3schools.com/colors/colors_names.asp
+        ctx.fillStyle = "red"
+        ctx.fillRect(50, 50, 20, 40)
+        //Aufgabe:
+        //   * Drei Stufen, die man von links nach rechts hochgeht.
+        //   * Unterste (laengste) Stufe "ForestGreen"
+        ctx.fillStyle = "ForestGreen"
+        ctx.fillRect(50, 250, 150, 30)
+        //   * Mittlere Stufe "LimeGreen"
+        ctx.fillStyle = "LimeGreen"
+        ctx.fillRect(100, 220, 100, 30)
+        //   * Oberste Stufe "GreenYellow"
+        ctx.fillStyle = "GreenYellow"
+        ctx.fillRect(150, 190, 50, 30)
+
+
+
+        // Randfarbe ändern (Standart: schwarz)
+        ctx.strokeStyle = "purple"
+        // Lichtstärke für Ränder ändern
+        ctx.lineWidth = 10
+        // Rechteck umranden
+        ctx.strokeRect(150, 20, 50, 50)
+
+
+
+        // Umrandetes Rechteck mit teiltransparenter Farbe füllen
+        // (Beachte, wo der Rand genau gezeichnet wird)
+
+        ctx.fillStyle = "Bisque"
+        ctx.strokeStyle = "Brown"
+        ctx.lineWidth = 2
+
+        // Zeichnung starten
+        ctx.beginPath()
+        // Kreis zeichnen
+        //   * Mittelpunkt: X= 350, Y= 150
+        //   *Radius: 50
+        //Startwinkel: 2 * PI rad (360°)
+        ctx.arc(350, 150, 50, 0, 2 * Math.PI)
+        // Zeichnung füllen
+        ctx.fill()
+        ctx.beginPath()
+        // Kreis zeichnen
+        //   * Radius : 50
+        //   * Startwinkel : 9 rad
+        //   * Endwinkel : 2 * PI rad
+
+        ctx.arc(350, 150, 50, 0, 2 * Math.PI)
+        // Rechts Auge
+        ctx.beginPath()
+        ctx.arc(330, 135, 5, 0, 2 * Math.PI)
+        ctx.stroke()
+        // Mit zeichnen beginnen
+        // Linkes Auge
+        ctx.beginPath()
+        ctx.arc(370, 135, 5, 0, 2 * Math.PI)
+        ctx.stroke()
+        //Rand von Zeichnung zeichnen
+        // Mund
+        ctx.beginPath()
+        ctx.arc(350, 150, 25, Math.PI / 4, 3 * Math.PI / 4)
+        ctx.stroke()
+
+
+
+        ctx.strokeStyle = "GoldenRod"
+        ctx.translate(210, 220)
+        ctx.beginPath()
+        // Startpunkt festlegen
+        ctx.moveTo(0, 0)
+        // Linie vom Startpunkt zum Punkt (60, 0) zeichnen
+        ctx.lineTo(60, 0)
+        ctx.moveTo(0, 100)
+        ctx.lineTo(0, 0)
+        ctx.moveTo(0, 50)
+        ctx.lineTo(30, 50)
+
+
+        ctx.stroke()
+
+
+        ctx.translate(50, 0) // Nullpunkt auf (50, 0) festlegen
+        ctx.beginPath()
+        ctx.moveTo(0, 50)
+        ctx.lineTo(0, 0)
+        ctx.arc(0, 12.5, 12.5, 3 / 2 * Math.PI, Math.PI / 2)
+        ctx.arc(0, 36, 13.5, 3 / 2 * Math.PI, Math.PI / 2)
+        ctx.stroke()
+        ctx.resetTransform() // Nullpunkt (und andere eventuelle Transformationen) zurücksetzen
+
+
+        ctx.font = "bold 40px Courier"
+        // bei Wörter "" beachten
+
+        ctx.fillStyle = "black"
+        // Text füllen
+
+        ctx.fillText("Hello", 10, 350)
+
+        ctx.strokeStyle = "black"
+        ctx.lineWidth = 1
+        ctx.strokeText("Nice to meet you", 10, 380)
+
+
+
+        ctx.fillStyle = "tan"
+        ctx.fillText("How are you?", 10, 440)
+        ctx.strokeText = "tomato"
+        ctx.strokeText("How are you?", 10, 440)
+
+    </script>
+</body>
+
+</html>

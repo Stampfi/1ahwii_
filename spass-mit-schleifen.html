@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>Spaß mit Schleifen</title>
+    <style>
+        #scene {
+            border: 1px dotted black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Spaß mit Schleifen</h1>
+    <canvas id="scene" width="500" height="500">
+        Dein Browser unterstützt das Canvas-Element nicht.
+    </canvas>
+    <script>
+        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+
+        // Variable mit dem Namen `offset` erzeugen (= deklarieren) und
+        // die Zahl 5 darin merken
+        let offset = 5
+
+        // Anweisungen in der Schleife werden so lange wiederholt, so lange
+        // die Aussage 'wahr' ist.
+        // Operatoren zum Vergleichen von Zahlen: <, <=, >, >=, ==
+        while (offset < 100) {
+            console.log(`Offset = ${offset}`)
+            ctx.strokeRect(offset, offset, 50, 50)
+
+            // WICHTIG: Variable 'offset' muss verändert werden,
+            // damit die Bedingung in der Schleife irgendwann nicht mehr
+            // 'wahr' ist und die Schleife beendet werden kann.
+            // Ansonste erhält man eine sich endlos wiederholende Schleife.
+            offset = offset + 5
+        }
+        console.log(`Offset after loop = ${offset}`)
+        ctx.fillRect(offset, offset, 50, 50)
+
+        // Offset um 10 erhöhen, Offset um 1 erhöhen, Offset nicht erhöhen
+        // Größe einbauen ('size')
+        // nur Breite/Höhe verändern
+
+        // Viele Schleifen funktionieren folgendermaßen:
+        // * Vor der Schleife wird eine Variable 'a'
+        //   auf einen bestimmten Anfangswert gesetzt.
+        // * Vor jedem Durchlauf der Schleife wird mithilfe der Variable 'a'
+        //   geprüft, ob die Anweisungen in der Schleife ausgeführt werden sollen.
+        // * Nach jedem Schleifendurchlauf wird die Variable 'a' verändert,
+        //   sodass obige Bedingung eventuell nicht mehr erfüllt wird
+        //   und die Schleife dadurch beendet wird.
+        //   für solche Schleifen gibt es eine alzernative,
+        //   etwas kürzere Schreibweise - die for-Schleife
+
+        for (let offset = 5; offset < 100; offset = offset + 5) 
+        {
+            ctx.strokeRect(offset + 150, offset, 50, 50)
+        }
+
+        // für 'offset = offset + 5' gibt es noch eine kürzere Schreibweise:
+        // 'offste += 5' (gilt auch für die Operatoren '-', '*', '/' und '%')
+        // Für das Erhöhen einer Variable um 1 gibt es noch eine kürzere Schreibweise:
+        // 'offset++' (gilt auch für '-')  
+
+        // Übungen:
+
+        // Balkendiagramm von links nach rechts
+        // 1) gleich großen,
+
+        for (let offset = 0; offset < scene.width; offset += 20) 
+        {
+            ctx.fillRect(offset, 500, 10, -50)
+        }
+
+        // 2) immer größer werdenden,
+
+        // ctx.fillStyle = "blue"
+        // let hoehe = 20
+        // for (let offset = 0; offset < scene.width; offset += 20) {
+        //  ctx.fillRect(offset + 10, 500, 10, -hoehe)
+        // hoehe = hoehe + 15
+        // }
+
+        // 3) immer kleiner werdendem
+        let hoehe = 15
+        for (let offset = 0; offset > scene.width; offset += 20)
+        {
+            ctx.fillRect(offset + 10, 400, 10 + hoehe)
+            hoehe = hoehe + 30
+        }
+
+        // Balkenzeichnen
+
+        console.log(`scene.width = ${scene.width}, scene height = ${scene.height}`)
+
+        // Konzentrische Kreise zeichnen (Kreise mit gleichem Mittelpunkt)
+        // 1) konstante veränderung des Radius'
+
+
+        for (let offset = 5; offset < 200; offset += 5) {
+            ctx.beginPath()
+            ctx.arc(250, 250, offset, 0, 2 * Math.PI)
+            ctx.stroke()
+        }
+        // 2) radiusveränderung wird immer größer
+
+        let breite = 10
+        for (let breite = 10; breit < 200; breite += breite + 5) {
+            ctx.beginPath()
+            ctx.arc(250, 240, breite, 0, 2 * Math.PI)
+            ctx.stroke()
+        }
+
+
+// Strichlierten Kreis zeichnen 
+
+
+
+// Mathematische Funktion zeichnen, z.b. x * x / 500
+
+
+
+
+offset2 = 0
+while (offset2 < 500)
+{
+    console.log(`offset2 = ${offset2}`)
+    ctx.strokeRect( offset2, 500, 20, offset2 - 500)
+
+    offset2 = offset2 + 20
+}
+console.log(`Offset after loop = ${offset2}`)
+
+
+    </script>
+
+</body>
+
+</html>

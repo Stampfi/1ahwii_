@@ -1,0 +1,90 @@
+<!Doctype html>
+<html lang="de">
+
+<head>
+    <title>Canvas - Vorlage</title>
+    <style>
+        #scene {
+            border: 1px dotted black
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Canvas - Vorlage</h1>
+    <canvas id="scene" width="500" height="500">
+        Dein Browser unterstützt Canvas nicht.
+    </canvas>
+    <script>
+        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+
+        // Rechtecke zeichnen geht mit einer einzigen Anweisung
+        // ctx.fillRect(150, 50, 150, 150)
+
+        // Kreise zeichenn ist komplizierter...
+        // ctx.beginPath()
+        // ctx.arc(50, 50, 20, 0, 2 * Math.PI)
+        // ctx.fill()
+
+        // ... aber wir können es uns selber leichter machen,
+        // indem wir uns eine Funktion definieren.
+        // Funktionsdefinition - Name ist beliebig, soll sprechend sein.
+        // "x", "y" und "radius" sind Funktionsparameter und werden bei jedem Aufruf der Funktion vom Aufrufer übergeben
+        // (ansonsten würde ja immer der gleiche Kreis gezeichnet werden)
+        // Funktionsparameter dürfen nur innerhalb der Funktion verwendet werden.
+        // Befehle innerhalb "(" und ")" werden bei jedem Funktionsaufruf ausgeführt.
+        let fillCircle = (x, y, radius) => {
+            ctx.beginPath()
+            ctx.arc(x, y, radius, 0, 2 * Math.PI)
+            ctx.fill()
+        }
+        // Funktionslauf - erst beim Anruf werden die Befehle in der Funktion ausgeführt   
+        // Funktion gehört nicht zum ctx-Objekt, deshalb wird sie ohne "ctx." aufgerufen
+        fillCircle(50, 50, 20)
+        fillCircle(75, 100, 60)
+        fillCircle(130, 150, 5)
+        // fillColeredCircle(250, 100, 50, "Teal")
+        let fillColeredCircle = (xCoordinate, yCoordinate, r, color) => {
+            ctx.beginPath()
+            ctx.arc(xCoordinate, yCoordinate, r, 0, 2 * Math.PI)
+            ctx.fillStyle = color
+            ctx.fill()
+        }
+        fillColeredCircle(250, 100, 50, "Teal")
+        fillColeredCircle(250, 100, 20, "Brown")
+        // Übungen für jetzt/zuhause:
+        // Funktion, die Ampel zeichent (fillColeredCircle verwenden)
+        
+
+        let Ampel = (x, y) =>
+        {
+            ctx.fillStyle = "Black"
+            ctx.fillRect(x, y, 68, 150)
+            ctx.beginPath()
+            ctx.fillStyle = "red"
+            ctx.arc(x + 34, y + 30, 20, 0, 2 * Math.PI)
+            ctx.fill()
+            ctx.beginPath()
+            ctx.fillStyle = "orange"
+            ctx.arc(x + 34, y + 75, 20, 0, 2 * Math.PI)
+            ctx.fill()
+            ctx.beginPath()
+            ctx.fillStyle = "green"
+            ctx.arc(x + 34, y + 120, 20, 0, 2 * Math.PI)
+            ctx.fill()
+        }
+
+        Ampel(20, 230)
+
+
+
+
+
+
+
+
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!Doctype html>
+<html lang="de">
+
+<head>
+    <title>Stufenrand</title>
+    <style>
+        #scene {
+            border: 1px dotted black
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Stufenrand</h1>
+    <canvas id="scene" width="500" height="500">
+        Dein Browser unterstützt Canvas nicht.
+    </canvas>
+    <script>        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+
+        ctx.strokeStyle = "Teal"
+        ctx.lineWidht = 4
+        ctx.beginPath()
+        ctx.moveTo(50, 400)
+        ctx.lineTo(350, 400)
+        ctx.lineTo(350, 100)
+        ctx.lineTo(250, 100)
+        ctx.lineTo(250, 200)
+        ctx.lineTo(150, 200)
+        ctx.lineTo(150, 300)
+        ctx.lineTo(50, 300)
+        ctx.lineTo(50, 400)
+
+
+
+
+        ctx.stroke()
+
+    </script>
+</body>
+
+</html>

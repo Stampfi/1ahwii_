@@ -1,0 +1,35 @@
+<!Doctype html>
+<html lang="de">
+
+<head>
+    <title>Halbkreis</title>
+    <style>
+        #scene {
+            border: 1px dotted black
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Halbkreis</h1>
+    <canvas id="scene" width="500" height="500">
+        Dein Browser unterstützt Canvas nicht.
+    </canvas>
+    <script>
+        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+
+        let drawSemiCircle = (startAngle) => {
+            ctx.beginPath()
+            ctx.arc(100, 100, 50, startAngle, Math.PI + startAngle)
+            ctx.stroke()
+        }
+
+        drawSemiCircle(100, 100, 7 / 8 * Math.PI)
+        drawSemiCircle(10, 200, 0,)
+       
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!Doctype html>
+<html lang="de">
+
+<head>
+    <title>Haus vom Nikolaus</title>
+    <style>
+        #scene {
+            border: 1px dotted black
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Haus vom Nikolaus</h1>
+    <canvas id="scene" width="500" height="500">
+        Dein Browser unterstützt Canvas nicht.
+    </canvas>
+    <script>
+        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+
+        ctx.strokeStyle = "darkblue"
+        ctx.lineWidth = 2
+        ctx.beginPath()
+        ctx.moveTo(20, 480)
+        ctx.lineTo(280, 480)
+        ctx.lineTo(280, 240)
+        ctx.lineTo(160, 100)
+        ctx.lineTo(20, 240)
+        ctx.lineTo(280, 240)
+        ctx.lineTo(20, 480)
+        ctx.lineTo(20, 240)
+        ctx.lineTo(280, 480)
+
+
+
+        ctx.stroke()
+    </script>
+</body>
+
+</html>

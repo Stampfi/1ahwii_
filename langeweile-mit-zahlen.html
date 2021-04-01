@@ -1,0 +1,111 @@
+<!Doctype html>
+<html lang="de">
+
+<head>
+    <title>Langeweile mit Zahlen</title>
+    <style>
+        #scene {
+            border: 1px dotted black
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Langeweile mit Zahlen</h1>
+    <canvas id="scene" width="500" height="500">
+
+        Dein Browser unterstützt Canvas nicht.
+    </canvas>
+    <script>
+        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+        // Eine Variable ist wie eine Box, in der man etwas aufbewahren kann.
+        // In eriner Variable wird dabei jewiels genau ein Wert aufbewahrt (= gespeichert).
+        // z.B. eine Zahl, ein TExt, ein Bild oder wie oben ein 2D-Zeichnekontext eines Canvas`.
+        // Variablen werden im RAM gespeichert, sind also in ihrer Größe begrenzt,
+        // dafür ist der Zugriff darauf aber sehr schnell.
+        // Der Inhalt einer Variable kann gelesen (read) oder geschrieben (write) werden.
+        // Variablen werden bei der ersten Verwendung mit den Schlüsselwort ´let` definiert,
+        // anschließend kann der Inhalt beliebig oft gelesen und/oder beschrieben werden.
+
+
+        // Variable mit dem Namen `summand1` erzeugen und die Zahl 5 darin speichern 
+        let summand1 = 5
+        // Variable lesen und in die Entwicklerkonsole schreiben
+
+        let summand2 = 3
+        let sum = summand1 + summand2
+        // Mit `string interpolation` kann aus mehreren Variablen ein Text erzeugt werden 
+        let calculation = `${summand1} + ${summand2}= ${sum}`
+        console.log(calculation)
+
+        // Variable mit dem Namen `minuend` erzeugen und die Zahl 10 darin spreichern
+        let minuend = 10
+        // Variable lesen und in die Entwicklerkonsole schreiben
+
+        let subtrahend = 6
+
+        let dif = minuend - subtrahend
+        // Mit `string interpolation` kann aus mehreren Variablen ein Text erzeugt werden
+        let calc = `${minuend} - ${subtrahend} = ${dif}`
+        console.log(calc)
+
+        let faktor1 = 3
+
+        let faktor2 = 4
+        let produkt = faktor1 * faktor2
+        let pro = `${faktor1} * ${faktor2} = ${produkt}`
+        console.log(pro)
+
+
+        let divident = 34
+
+        let divisor = 5
+        let quotient = divident / divisor
+        let quo = `${divident} / ${divisor} = ${quotient}`
+        console.log(quo)
+
+
+        // Der Modulo-Operator ("%") errechnet den Rest der Division zweier Zahlen
+        let remainder = divident % divisor
+        console.log(`${divident} % ${divisor} = ${remainder}`)
+
+        // Neuen Wert in bestehende Variable schreiben.
+        divident = 20
+        // Achtung: `quotient` und `remainder` werden micht automatisch neu beberechnet
+        console.log(`${divident} % ${divisor} = ${remainder}) (falsches Ergebnis, weil nicht neu berechnet )`)
+        remainder = divident % divisor
+        console.log(`${divident} % ${divisor} = ${remainder}`)
+
+
+        // Vorrangsregeln ("Operator precidence") funktionieren wie gewohnt
+        console.log(`17 + 4 * 3 = ${17 + 4 * 3}`)
+        console.log(`(17 + 4) * 3 = ${(17 + 4) * 3}`)
+        console.log(`16 - (8 + 3) = ${16 - (8 + 3)}`)
+        
+        // Mathematische Funktionen in "Math"-Objekt
+        console.log(`sin(0°) = ${Math.sin(0)}`)
+        console.log(`sin(90°) = ${Math.sin(Math.PI / 2)}`)
+        console.log(`cos(90°) = ${Math.cos(Math.PI / 2)}`)
+        console.log(`tan(90°) = ${Math.tan(Math.PI / 4)}`)
+        console.log(`sqrt(16) = ${Math.sqrt(16)}`)
+        console.log(`random() = ${Math.random()}`)
+        console.log(`random() = ${Math.random()}`)
+        console.log(`floor(${quotient}) = ${Math.floor(3,4)}`)
+        console.log(`ceil(${quotient}) = ${Math.ceil(3,5)}`)
+        console.log(`round(${quotient}) = ${Math.round(3,5)}`)
+        console.log(`hypot(${faktor1}, ${faktor2}) = ${Math.hypot(3, 4)}`)
+        
+
+
+
+
+
+
+        
+
+    </script>
+
+</body>
+
+</html>

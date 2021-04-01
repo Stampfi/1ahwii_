@@ -1,0 +1,34 @@
+<!Doctype html>
+<html lang="de">
+
+<head>
+    <title>canvas - test - vorlage</title>
+    <style>
+        #scene {
+            border: 1px dotted black
+        }
+    </style>
+</head>
+
+<body>
+    <h1>canvas - test - vorlage</h1>
+    <canvas id="scene" width="500" height="500">
+        Dein Browser unterstützt Canvas nicht.
+    </canvas>
+    <script>        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+
+        let fillAndStrokeSquare = (x, y, length, width, fillcolor) => {
+            ctx.fillStyle = fillcolor
+            ctx.fillRect(x, y, length, width)
+            ctx.lineWidth = 5
+            ctx.strokeStyle = "black"
+            ctx.strokeRect(x, y, length, width)
+
+        }
+        fillAndStrokeSquare(150, 150, 200, 200, "blue")
+        
+    </script>
+</body>
+
+</html>
