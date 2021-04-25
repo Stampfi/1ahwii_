@@ -1,0 +1,100 @@
+<!Doctype html>
+<html lang="de">
+
+<head>
+    <title>Spaß mit Verzweigungen</title>
+    <style>
+        #scene {
+            border: 1px dotted black
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Spaß mit Verzweigungen</h1>
+    <canvas id="scene" width="500" height="500">
+        Dein Browser unterstützt Canvas nicht.
+    </canvas>
+    <script>
+        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+
+
+        let fillCircle = (xCenter, yCenter, radius) => 
+        {
+            if (radius < 30)
+            {
+                ctx.fillStyle = "crimson"
+            }
+
+          
+
+            else if (radius < 50)
+            {
+                ctx.fillStyle = "steelblue"
+            }
+            
+            else if (radius < 60)
+            {
+                ctx.fillStyle = "khaki"
+            }
+
+            else if (radius < 70)
+            {
+                ctx.fillStyle = "green"
+            }
+      
+            ctx.beginPath()
+            ctx.arc(xCenter, yCenter, radius, 0, 2 * Math.PI)
+            ctx.fill()
+            ctx.stroke()
+        }
+        // fillCircle(250, 200, 200)
+        // fillCircle(420, 100, 40)
+        // fillCircle(70, 100, 20)
+
+        let radius = 200
+        fillCircle(250, 200, radius)
+
+        let number = 150
+
+
+        let begin = 0
+        while (begin < number)
+        {
+             
+        let raidus = Math.random() * 60 + 10
+        let xCenter = Math.random() * (scene.width - radius * 2) + radius    
+        let yCenter = Math.random() * (scene.height - radius * 2) + radius    
+        console.log(`radius = ${radius}`)
+        console.log(`xCenter = ${xCenter}`)
+        console.log(`yCenter${yCenter}`)
+        fillCircle(xCenter, yCenter, radius)
+        begin += 1
+    
+        }
+        // fillCircle(250, 200, 200)
+        // fillCircle(420, 100, 40)
+        // fillCircle(70, 100, 20)
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // console.log(`Math.random = ${Math.random}`)
+
+     
+      
+        
+
+
+
+    </script>
+</body>
+
+</html>
